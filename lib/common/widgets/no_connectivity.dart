@@ -39,10 +39,10 @@ class _NoConnectivityState extends State<NoConnectivity> {
                 height: size.height * 0.020,
               ),
               Text(
-                "There is no internet connection. \n Please check your internet connection",
+                "No internet connection. \n Please check your internet.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  fontSize: 20,
+                  fontSize: 21,
                 ),
               )
             ],

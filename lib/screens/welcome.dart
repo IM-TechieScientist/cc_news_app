@@ -1,11 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/common/colors.dart';
 import 'package:news_app/common/common.dart';
 import 'package:news_app/common/widgets/no_connectivity.dart';
 import 'package:news_app/screens/home/home.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
