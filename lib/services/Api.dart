@@ -78,4 +78,11 @@ class ApiService {
       headers: headers,
     );
   }
+   Future<http.Response> searchArticles(String keyword, int page, {int pageSize = 20}) {
+    return client.get(
+      Uri.parse('$endpoint/everything?qInTitle=$keyword&language=en&sortBy=publishedAt&page=$page&pageSize=$pageSize&apiKey=$apiKey'),
+      headers: headers,
+    );
+  }
+
 }

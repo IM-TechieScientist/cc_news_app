@@ -11,6 +11,7 @@ import 'package:news_app/screens/home/widgets/CategoryItem.dart';
 import 'package:news_app/screens/home/widgets/newsCard.dart';
 import 'package:provider/provider.dart';
 import 'package:news_app/providers/theme_provider.dart';
+import 'package:news_app/screens/home/search_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -129,6 +130,15 @@ class _HomeState extends State<Home> {
             ),
             onPressed: () {
               themeProvider.toggleTheme();
+            },
+          ),
+          IconButton(
+             icon: Icon(Icons.search, color: AppColors.white),
+             onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchPage()),
+              );
             },
           ),
         ],

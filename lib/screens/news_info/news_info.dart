@@ -37,7 +37,7 @@ class _NewsInfoState extends State<NewsInfo> {
     return Scaffold(
       backgroundColor: isDarkMode ? Colors.black : AppColors.white,
       appBar: AppBar(
-        backgroundColor: isDarkMode ? Colors.grey[900] : AppColors.tertiary,
+        backgroundColor: AppColors.tertiary,
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: Icon(
