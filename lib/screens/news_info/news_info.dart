@@ -31,15 +31,18 @@ class _NewsInfoState extends State<NewsInfo> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    Color textColor = isDarkMode ? Colors.white : Colors.black;
+
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: isDarkMode ? Colors.black : AppColors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.tertiary,
+        backgroundColor: isDarkMode ? Colors.grey[900] : AppColors.tertiary,
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
-          child: const Icon(
+          child: Icon(
             Icons.arrow_back_sharp,
-            color: AppColors.white,
+            color: isDarkMode ? Colors.white : AppColors.white,
           ),
         ),
       ),
@@ -80,6 +83,7 @@ class _NewsInfoState extends State<NewsInfo> {
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
+                      color: textColor,
                     ),
                   ),
                   const SizedBox(
@@ -90,9 +94,9 @@ class _NewsInfoState extends State<NewsInfo> {
                     children: [
                       Row(
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.person,
-                            color: AppColors.black,
+                            color: textColor,
                             size: 20,
                           ),
                           SizedBox(
@@ -102,7 +106,7 @@ class _NewsInfoState extends State<NewsInfo> {
                               child: Text(
                                 widget.news.author.toString(),
                                 style: GoogleFonts.poppins(
-                                  color: AppColors.black,
+                                  color: textColor,
                                 ),
                               ),
                             ),
@@ -111,9 +115,9 @@ class _NewsInfoState extends State<NewsInfo> {
                       ),
                       Row(
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.access_time,
-                            color: AppColors.black,
+                            color: textColor,
                             size: 20,
                           ),
                           Padding(
@@ -126,6 +130,7 @@ class _NewsInfoState extends State<NewsInfo> {
                               ).fromNow().toString(),
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
+                                color: textColor,
                               ),
                             ),
                           ),
@@ -140,6 +145,7 @@ class _NewsInfoState extends State<NewsInfo> {
                     widget.news.content.toString(),
                     style: GoogleFonts.poppins(
                       fontSize: 14,
+                      color: textColor,
                     ),
                   ),
                 ],
@@ -163,17 +169,17 @@ class _NewsInfoState extends State<NewsInfo> {
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
+                      color: textColor,
                     ),
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_forward,
-                    color: AppColors.black,
+                    color: textColor,
                     size: 14,
                   )
                 ],
               ),
             ),
-            
           ],
         ),
       ),

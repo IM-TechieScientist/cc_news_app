@@ -62,7 +62,6 @@
 //     );
 //   }
 // }
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/common/colors.dart';
@@ -88,15 +87,20 @@ class CategoryItem extends StatefulWidget {
 class _CategoryItemState extends State<CategoryItem> {
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final activeColor = isDarkMode ? Colors.white : AppColors.black;
+    final inactiveColor = isDarkMode ? Colors.grey : AppColors.lighterBlack;
+
     return GestureDetector(
-      onTap: () {  print("Clicked on: ${widget.categoryName} (Index: ${widget.index})");widget.onClick(widget.index);},
+      onTap: () {
+        print("Clicked on: ${widget.categoryName} (Index: ${widget.index})");
+        widget.onClick(widget.index);
+      },
       child: Container(
         width: 130,
         decoration: BoxDecoration(
           border: Border.all(
-            color: widget.activeCategory == widget.index
-                ? AppColors.black
-                : AppColors.lighterBlack,
+            color: widget.activeCategory == widget.index ? activeColor : inactiveColor,
             width: widget.activeCategory == widget.index ? 2 : 1,
           ),
           borderRadius: BorderRadius.circular(50),
@@ -113,12 +117,8 @@ class _CategoryItemState extends State<CategoryItem> {
                 widget.categoryName.substring(1).toString(),
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: widget.activeCategory == widget.index
-                    ? AppColors.black
-                    : AppColors.lighterBlack,
-                fontWeight: widget.activeCategory == widget.index
-                    ? FontWeight.w600
-                    : FontWeight.w500,
+                color: widget.activeCategory == widget.index ? activeColor : inactiveColor,
+                fontWeight: widget.activeCategory == widget.index ? FontWeight.w600 : FontWeight.w500,
               ),
             ),
           ),

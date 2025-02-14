@@ -19,7 +19,7 @@ A simple Flutter-based news application that fetches and displays news articles 
 ## Setup Instructions
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/news_app.git
+   git clone https://github.com/IM-TechieScientist/cc_news_app
    cd news_app
    ```
 2. Install dependencies:

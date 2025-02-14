@@ -25,6 +25,9 @@ class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    Color textColor = isDarkMode ? Colors.white : AppColors.black;
+
     return GestureDetector(
       onTap: () {
         if (!_isNavigating) {
@@ -75,8 +78,8 @@ class _NewsCardState extends State<NewsCard> {
                     child: Text(
                       widget.article.title.toString(),
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: AppColors.black,
+                        textStyle: TextStyle(
+                          color: textColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -88,9 +91,9 @@ class _NewsCardState extends State<NewsCard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.person,
-                            color: AppColors.black,
+                            color: textColor,
                             size: 20,
                           ),
                           SizedBox(
@@ -101,8 +104,8 @@ class _NewsCardState extends State<NewsCard> {
                                 widget.article.author.toString(),
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: AppColors.black,
+                                  textStyle: TextStyle(
+                                    color: textColor,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -115,9 +118,9 @@ class _NewsCardState extends State<NewsCard> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.access_time,
-                            color: AppColors.black,
+                            color: textColor,
                             size: 20,
                           ),
                           Padding(
@@ -129,8 +132,8 @@ class _NewsCardState extends State<NewsCard> {
                                 widget.article.publishedAt.toString(),
                               ).fromNow().toString(),
                               style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                                  color: AppColors.black,
+                                textStyle: TextStyle(
+                                  color: textColor,
                                   fontWeight: FontWeight.w500,
                                   overflow: TextOverflow.fade,
                                 ),
@@ -148,8 +151,8 @@ class _NewsCardState extends State<NewsCard> {
                     child: Text(
                       widget.article.description.toString(),
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: AppColors.black,
+                        textStyle: TextStyle(
+                          color: textColor,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
