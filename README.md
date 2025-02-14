@@ -8,13 +8,8 @@ A simple Flutter-based news application that fetches and displays news articles 
 - Load more functionality to fetch additional articles.
 - Displays article images, headlines, and descriptions.
 - Handles internet connectivity issues gracefully.
-
-## Tech Stack
-- **Flutter** for front-end development
-- **Dart** for application logic
-- **News API** (or an alternative) for fetching news articles
-- **LoadMore package** for infinite scrolling
-- **Google Fonts package** for custom fonts
+- Search articles based on keywords
+- Toggle Dark mode on and off
 
 ## Setup Instructions
 1. Clone this repository:
