@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.4
   provider: ^6.1.2
   skeletons: ^0.0.3
 
@@ -29,3 +30,13 @@ flutter:
   assets:
   - assets/.env
   - assets/images/
+
+flutter_native_splash:
+  color: "#FFFFFF"  # Background color
+  image: assets/images/splash_logo.png  # Your splash screen image
+  android: true
+  ios: true
+  fullscreen: true
+  android_12:
+    image: assets/images/splash_logo.png
+    icon_background_color: "#FFFFFF"
